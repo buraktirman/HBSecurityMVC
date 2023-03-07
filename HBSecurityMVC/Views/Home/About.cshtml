@@ -1,0 +1,339 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>HBSecurity - About</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/Img/hb_security_logo.jpg" rel="icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Logis/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Logis/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Logis/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/Logis/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Logis/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/Logis/assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Logis/assets/css/main.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    * Template Name: Logis - v1.3.0
+    * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+            <a href="https://localhost:44348" class="logo d-flex align-items-center">
+                <img src="~/Img/hb_security_logo.jpg" alt="HBSecurity Logo">
+                <h1>HBSecurity</h1>
+            </a>
+
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    @if (Session["Email"] == null)
+                    {
+                        <li>
+                            @Html.ActionLink("Home", "Index", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("About", "About", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("MitreInfo", "MitreInfo", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("SignUp", "SignUp", "User")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Login", "Login", "User")
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            @Html.ActionLink("Home", "Index", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("About", "About", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("MitreInfo", "MitreInfo", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("ApplyTest", "ApplyTest", "Report")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Test Results", "TestResults", "Report")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Hello " + $"{Session["Name"].ToString()}", "UserProfile", "User")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Log Out", "LogOut", "User")
+                        </li>
+                    }
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('~/Logis/assets/img/page-header.jpg');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h2>About</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li>
+                            @Html.ActionLink("Home", "Index", "Home")
+                        </li>
+                        <li>About</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about pt-0">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+                    <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+                        <img src="~/Img/mitre.png" class="img-fluid" width="800" alt="">
+                        <a href="https://www.youtube.com/watch?v=Yxv1suJYMI8" class="glightbox play-btn"></a>
+                    </div>
+                    <div class="col-lg-6 content order-last  order-lg-first">
+                        <h3>About Us</h3>
+                        <p>
+                            HBSecurity is a leader in online protection. We make life online safe and enjoyable for everyone. We are focused on protecting people, not devices. Our solutions adapt to our customers’ needs in this always online world. We empower our customers to confidently experience life online through integrated, easy-to-use solutions that provide total protection for their families and communities.
+                        </p>
+                        <ul>
+                            <li data-aos="fade-up" data-aos-delay="100">
+                                <i class="bi bi-bricks"></i>
+                                <div>
+                                    <h5>What does MITRE ATT&CK do?</h5>
+                                    <p>Provides a comprehensive classification to better understand an attacker's behavior after an abuse has occurred.</p>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-delay="200">
+                                <i class="bi bi-fullscreen-exit"></i>
+                                <div>
+                                    <h5>What is our difference?</h5>
+                                    <p>To reach the solution in the fastest way and to keep the customer satisfaction at the highest level.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <!-- ======= Stats Counter Section ======= -->
+        <section id="stats-counter" class="stats-counter pt-0">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Clients</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Projects</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Hours Of Support</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Workers</p>
+                        </div>
+                    </div><!-- End Stats Item -->
+
+                </div>
+
+            </div>
+        </section><!-- End Stats Counter Section -->
+        <!-- ======= Our Team Section ======= -->
+        <section id="team" class="team pt-0">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <span>Our Team</span>
+                    <h2>Our Team</h2>
+
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-6 col-md-6 d-flex">
+                        <div class="member">
+                            <img src="~/Img/HasanUYSAL.png" class="img-fluid" alt="">
+                            <div class="member-content">
+                                <h4>Hasan Uysal</h4>
+                                <span>Software Developer</span>
+                                <div class="social">
+                                    <a href="https://www.instagram.com/7hasanuysal/" target="_blank"><i class="bi bi-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/hasan-uysal-176a94235/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-6 col-md-6 d-flex">
+                        <div class="member">
+                            <img src="~/Img/BurakTIRMAN.jpg" class="img-fluid" alt="">
+                            <div class="member-content">
+                                <h4>Burak Tırman</h4>
+                                <span>El Profesor</span>
+                                <div class="social">
+                                    <a href="https://www.instagram.com/burak.tirman/" target="_blank"><i class="bi bi-instagram">  </i></a>
+                                    <a href="https://www.linkedin.com/in/buraktirman/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+
+                </div>
+
+            </div>
+        </section><!-- End Our Team Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span>HBSecurity</span>
+                    </a>
+                    <p>"Our self-confidence is the result of our experience."</p>
+                    <div class="social-links d-flex mt-4">
+                        <a href="https://www.linkedin.com/in/dr-emre-atl%C4%B1er-olca-54564710/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="https://localhost:44348/Home/About">About us</a></li>
+                        <li><a href="https://localhost:44348/Home/Contact">Contact</a></li>
+                        <li><a href="https://localhost:44348/Home/MitreInfo">Mitre Information</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Apply Tests</a></li>
+                        <li><a href="#">Database Storage</a></li>
+                        <li><a href="#">Listing Past Tests</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Zühtüpaşa, Bağdat Cd. <br>
+                        No:2, 34724<br>
+                        Kadıköy/İstanbul <br>
+                        <strong>Phone:</strong> 0 (216) 542 1907<br>
+                        <strong>Email:</strong> hbsecurity@hbsecurity.com<br>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>HBSecurity</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="~/Logis/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Logis/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Logis/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Logis/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Logis/assets/vendor/aos/aos.js"></script>
+    <script src="~/Logis/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Logis/assets/js/main.js"></script>
+
+</body>
+
+</html>
